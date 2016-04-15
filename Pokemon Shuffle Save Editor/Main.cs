@@ -248,8 +248,8 @@ namespace Pokemon_Shuffle_Save_Editor
             #region Mega Visibility
             CHK_MegaY.Visible = HasMega[mons[ind].Item1][0];
             CHK_MegaX.Visible = HasMega[mons[ind].Item1][1];
-            PB_MegaX.Image = HasMega[mons[ind].Item1][1] ? new Bitmap((Image)Properties.Resources.ResourceManager.GetObject("MegaStone" + mons[ind].Item1.ToString("000") + "_X")) : new Bitmap(16, 16);
-            PB_MegaY.Image = HasMega[mons[ind].Item1][0] ? new Bitmap((Image)Properties.Resources.ResourceManager.GetObject("MegaStone" + mons[ind].Item1.ToString("000") + ((HasMega[mons[ind].Item1][0] && HasMega[mons[ind].Item1][1]) ? "_Y" : string.Empty))) : new Bitmap(16, 16);
+            PB_MegaX.Image = HasMega[mons[ind].Item1][1] ? new Bitmap((Image)Properties.Resources.ResourceManager.GetObject("MegaStone" + mons[ind].Item1.ToString("000") + "_Y")) : new Bitmap(16, 16);
+            PB_MegaY.Image = HasMega[mons[ind].Item1][0] ? new Bitmap((Image)Properties.Resources.ResourceManager.GetObject("MegaStone" + mons[ind].Item1.ToString("000") + ((HasMega[mons[ind].Item1][0] && HasMega[mons[ind].Item1][1]) ? "_X" : string.Empty))) : new Bitmap(16, 16);
             #endregion
             int mega_ofs = 0x406 + ((ind + 2) / 4);
             CHK_MegaY.Checked = ((BitConverter.ToUInt16(savedata, mega_ofs) >> ((5 + (ind << 1)) % 8)) & 1) == 1;
